@@ -48,8 +48,10 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle"
-          style="width: 120px;height:120px;">
+        <a href="assets/img/profile-img.jpg" data-gallery="Me" class="portfolio-lightbox">
+          <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle"
+            style="width: 120px;height:120px;">
+        </a>
         <h1 class="text-light"><a href="index.html">Dunhill Dimaapi</a></h1>
         <div class="social-links mt-3 text-center">
           <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> -->
@@ -152,7 +154,9 @@
             </p> -->
           </div>
           <div class="col-lg-4" data-aos="fade-right center">
-            <img src="assets/img/RightImage-4.png" width="100%" height="120" class="img-fluid">
+            <a href="assets/img/RightImage-4.png" data-gallery="Me" class="portfolio-lightbox">
+              <img src="assets/img/RightImage-4.png" width="100%" height="120" class="img-fluid">
+            </a>
           </div>
         </div>
 
@@ -400,7 +404,7 @@
         </div>
 
         <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
+          <div class="col-lg-8" data-aos="fade-up">
             <!-- <h3 class="resume-title">Sumary</h3>
             <div class="resume-item pb-0">
               <h4>Dunhill Dimaapi</h4>
@@ -414,6 +418,31 @@
               </ul>
             </div> -->
 
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>BS in Information Technology</h4>
+              <h5>2012 - 2016</h5>
+              <p><em>Bulacan State Universiry, Malolos, Bulacan</em></p>
+              <p>One of the top students in the class, a candidate for the best capstone award, and the 2nd Place winner
+                in the Web Development contest.
+              </p>
+            </div>
+
+            <div class="resume-item">
+              <h4>Web Developer Trainee - OJT</h4>
+              <h5>2015 - 2016</h5>
+              <p><em>Leggenda Pte. Ltd.</em></p>
+              <p>Enhanced existing website using Bootstrap, Jquery & PHP.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 d-flex align-items-center" data-aos="fade-up">
+            <a href="assets/img/2ndPlace.png" data-gallery="WorkPhotos" class="portfolio-lightbox">
+              <img src="assets/img/2ndPlace.png" width="100%" height="auto" class="img-fluid">
+            </a>
+          </div>
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Professional Experience</h3>
+
             <div class="resume-item">
               <h4>Full Stack Developer</h4>
               <h5>2023 - Present</h5>
@@ -425,36 +454,6 @@
               </ul>
             </div>
 
-            <div class="resume-item">
-              <h4>Mid Web Developer</h4>
-              <h5>2019 - 2021</h5>
-              <p>
-                <a href="https://www.webfocus.ph/" target="_blank">
-                  <em>WebFocus Solutions, Inc.</em>
-                </a>
-              </p>
-              <ul>
-                <li>Developed content management system and e-commerce websites using PHP (Laravel).</li>
-                <li>Implemented Payment APIs (Paynamics, Ubiz) and PSE API.</li>
-                <li>Uploaded various websites to live servers (cPanel).</li>
-                <li>Provided support for older websites and resolved server issues.</li>
-                <li>Participated in client meetings and contributed ideas to achieve their objectives.</li>
-              </ul>
-            </div>
-
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>BS in Information Technology</h4>
-              <h5>2012 - 2016</h5>
-              <p><em>Bulacan State Universiry, Malolos, Bulacan</em></p>
-              <p>One of the top students in the class, a candidate for the best capstone award, and the 2nd Place winner
-                in the Web Development contest.
-              </p>
-            </div>
-
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <!-- <h3 class="resume-title">Professional Experience</h3> -->
             <div class="resume-item">
               <h4>Full Stack Developer</h4>
               <h5>2021 - 2023</h5>
@@ -470,6 +469,27 @@
                 <li>Utilized Amazon services for the mobile applications (S3, Elastic Beanstalk, EC2, Lambda, API
                   Gateway).</li>
                 <li>Collaborated with and presented websites and applications to clients.</li>
+                <li>Worked with multiple engineering teams, and multi-functional partners.</li>
+                <li>Adhere to Agile Sprints, Delivery Framework, and SDLC best practices.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Mid Web Developer</h4>
+              <h5>2019 - 2021</h5>
+              <p>
+                <a href="https://www.webfocus.ph/" target="_blank">
+                  <em>WebFocus Solutions, Inc.</em>
+                </a>
+              </p>
+              <ul>
+                <li>Primarily assigned to develop web applications (Content Management System, E-Commerce System) based
+                  on client's requirements using PHP (Laravel).</li>
+                <li>Implemented Payment APIs (Paynamics, Ubiz) and PSE API.</li>
+                <li>Setup websites and fixed issues on CPanel.</li>
+                <li>Collaborated with Front-End Web Developers and QA to maintain UI/UX standards</li>
+                <li>Debugged, refactored and optimized existing websites and codes.</li>
+                <li>Participated in client meetings and contributed ideas to achieve their objectives.</li>
               </ul>
             </div>
 
@@ -479,19 +499,33 @@
               <p><em>Anydecide Holdings Corp.</em></p>
               <ul>
                 <li>Converted PSD or image web pages to HTML.</li>
-                <li>Developed a user-friendly website using CSS, JavaScript and PHP (Bootstrap, jQuery,
-                  CodeIgniter, Laravel).</li>
+                <li>Developed Content Management System and E-Commerce websites using CSS, JavaScript and PHP
+                  (Bootstrap, jQuery, CodeIgniter, Laravel).</li>
                 <li>Fixed bugs and implemented enhancements to improve website functionality</li>
+                <li>Manipulate and display data from Rest APIs</li>
+                <li>Cooperate on the decision and provided reports to the client</li>
               </ul>
             </div>
-
-            <h3 class="resume-title">&nbsp;</h3>
-            <div class="resume-item">
-              <h4>Web Developer Trainee - OJT</h4>
-              <h5>2015 - 2016</h5>
-              <p><em>Leggenda Pte. Ltd.</em></p>
-              <p>Enhanced existing website using Bootstrap, Jquery & PHP.</p>
-            </div>
+          </div>
+          <div class="col-lg-4 d-flex flex-column justify-content-center gap-1" data-aos="fade-up">
+            <a href="assets/img/CI.jpg" data-gallery="WorkPhotos" class="portfolio-lightbox">
+              <img src="assets/img/CI.jpg" width="100%" height="auto" class="img-fluid">
+            </a>
+            <a href="assets/img/Improve.png" data-gallery="WorkPhotos" class="portfolio-lightbox">
+              <img src="assets/img/Improve.png" width="100%" height="auto" class="img-fluid">
+            </a>
+            <a href="assets/img/webfocus.jpg" data-gallery="WorkPhotos" class="portfolio-lightbox">
+              <img src="assets/img/webfocus.jpg" width="100%" height="auto" class="img-fluid">
+            </a>
+            <a href="assets/img/devcon.jpg" data-gallery="WorkPhotos" class="portfolio-lightbox">
+              <img src="assets/img/devcon.jpg" width="100%" height="auto" class="img-fluid">
+            </a>
+            <a href="assets/img/india.jpg" data-gallery="WorkPhotos" class="portfolio-lightbox">
+              <img src="assets/img/india.jpg" width="100%" height="auto" class="img-fluid">
+            </a>
+            <a href="assets/img/anydecide.jpg" data-gallery="WorkPhotos" class="portfolio-lightbox">
+              <img src="assets/img/anydecide.jpg" width="100%" height="auto" class="img-fluid">
+            </a>
           </div>
         </div>
 
@@ -559,7 +593,7 @@
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/WebFocus/1.jpg" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/WorkPhotos/WebFocus/1.png" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                <a href="assets/img/portfolio/WebFocus/1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox"
                   title="Content Management System"><i class="bx bx-plus"></i></a>
                 <a href="website2.html" title="More Details"><i class="bx bx-link"></i></a>
               </div>
