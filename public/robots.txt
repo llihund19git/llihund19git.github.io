@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://llihund19git.github.io/sitemap-index.xml

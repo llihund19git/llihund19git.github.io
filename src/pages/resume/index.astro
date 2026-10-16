@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { capabilityGroups, communityLeadership, experience } from '../../data/portfolio';
+---
+
+<BaseLayout
+  title="Résumé — Dunhill Dimaapi"
+  description="Experience, leadership, education, and technical capabilities of senior full-stack developer Dunhill Dimaapi."
+>
+  <section class="resume-hero section-dark">
+    <div class="shell resume-title-row">
+      <div><p class="eyebrow">Résumé</p><h1>Dunhill Dimaapi</h1></div>
+      <div class="resume-actions">
+        <a class="button button-accent" href="mailto:dunhilldimaapi@gmail.com">Contact me</a>
+        <button class="button button-ghost print-button" type="button" onclick="window.print()">Print / save PDF</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="resume-page shell">
+    <section class="resume-summary">
+      <p class="eyebrow">Profile</p>
+      <p class="large-copy">
+        Senior full-stack developer with 10+ years of experience building secure banking services, web platforms,
+        mobile applications, APIs, content systems, commerce workflows, and cloud-supported products.
+      </p>
+      <div class="resume-contact">
+        <a href="mailto:dunhilldimaapi@gmail.com">dunhilldimaapi@gmail.com</a>
+        <a href="https://www.linkedin.com/in/llihund19/">linkedin.com/in/llihund19</a>
+        <a href="https://github.com/llihund19git">github.com/llihund19git</a>
+        <span>Plaridel, Bulacan, Philippines</span>
+      </div>
+    </section>
+
+    <section class="resume-section">
+      <h2>Professional experience</h2>
+      <ol class="resume-timeline">
+        {experience.map((item) => (
+          <li>
+            <p>{item.period}</p>
+            <div>
+              <h3>{item.role}</h3>
+              <h4>{item.company}</h4>
+              <p>{item.summary}</p>
+              <ul class="resume-role-list">
+                {item.highlights.map((highlight) => <li>{highlight}</li>)}
+              </ul>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="resume-section">
+      <h2>Technical capabilities</h2>
+      <div class="resume-skill-grid">
+        {capabilityGroups.map((group) => (
+          <div><h3>{group.label}</h3><p>{group.skills.join(' · ')}</p></div>
+        ))}
+      </div>
+    </section>
+
+    <section class="resume-section resume-leadership">
+      <h2>Community leadership</h2>
+      <div>
+        <p class="resume-period">{communityLeadership.period}</p>
+        <h3>{communityLeadership.role}</h3>
+        <h4>{communityLeadership.organization}</h4>
+        <p>{communityLeadership.summary}</p>
+        <ul class="resume-role-list">
+          {communityLeadership.strengths.map((strength) => <li>{strength}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="resume-section resume-education">
+      <h2>Education</h2>
+      <div>
+        <p>2012 — 2016</p>
+        <h3>BS in Information Technology</h3>
+        <h4>Bulacan State University · Malolos, Bulacan</h4>
+        <p>Candidate for Best Capstone Project — Examination and Monitoring System built with Java.</p>
+      </div>
+    </section>
+
+    <section class="resume-section resume-recognition">
+      <h2>Recognition</h2>
+      <div>
+        <h3>Most Improved Employee</h3>
+        <h4>Creative Interlace Technologies OPC · December 2022</h4>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

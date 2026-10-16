@@ -1,0 +1,243 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import {
+  capabilityGroups,
+  communityLeadership,
+  experience,
+  featuredProjects,
+  projects,
+  workingPrinciples,
+} from '../data/portfolio';
+import profileImage from '../../assets/img/profile-img.jpg';
+---
+
+<BaseLayout>
+  <section class="hero section-dark">
+    <div class="hero-grid shell">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Plaridel, Bulacan · Building for teams worldwide</p>
+        <h1>I build secure systems <em>behind</em> digital products.</h1>
+        <p class="hero-lead">
+          I’m Dunhill, a senior full-stack developer with 10+ years of experience delivering banking services, web
+          platforms, mobile applications, APIs, and cloud-supported products.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-accent" href="#work">Explore selected work</a>
+          <a class="button button-ghost" href="/resume/">View résumé</a>
+        </div>
+        <div class="hero-links" aria-label="Contact and profile links">
+          <a href="mailto:dunhilldimaapi@gmail.com">Email</a>
+          <a href="https://github.com/llihund19git" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/llihund19/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="hero-portrait" aria-label="Portrait of Dunhill Dimaapi">
+        <div class="portrait-frame">
+          <Image
+            src={profileImage}
+            alt="Dunhill Dimaapi smiling outdoors"
+            widths={[420, 640, 800]}
+            sizes="(min-width: 900px) 38vw, 84vw"
+            format="webp"
+            loading="eager"
+          />
+        </div>
+        <div class="portrait-note">
+          <span>Current focus</span>
+          <strong>Digital banking · Redis · APIs · Azure DevOps</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="proof-strip shell" aria-label="Professional highlights">
+      <div><strong>10+</strong><span>years building software</span></div>
+      <div><strong>10</strong><span>selected products</span></div>
+      <div><strong>03</strong><span>international markets served</span></div>
+      <div><strong>01</strong><span>community leadership role</span></div>
+    </div>
+  </section>
+
+  <section class="section section-work" id="work">
+    <div class="shell">
+      <div class="section-heading split-heading">
+        <div>
+          <p class="eyebrow">Selected work</p>
+          <h2>Products built for real people and real operations.</h2>
+        </div>
+        <p>
+          From community platforms to mobile services, each project combines practical engineering with dependable delivery.
+        </p>
+      </div>
+
+      <div class="featured-grid">
+        {featuredProjects.map((project, index) => <ProjectCard project={project} featured index={index} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark" id="experience">
+    <div class="shell experience-layout">
+      <div class="experience-intro">
+        <p class="eyebrow">Experience</p>
+        <h2>A decade of moving from implementation to ownership.</h2>
+        <p>
+          My path started in PHP web development and grew into full-stack ownership, mobile applications, cloud
+          delivery, mentoring, secure coding, and production banking systems.
+        </p>
+        <a class="text-link text-link-light" href="/resume/">Read the full résumé <span aria-hidden="true">↗</span></a>
+      </div>
+
+      <ol class="timeline">
+        {experience.map((item) => (
+          <li>
+            <p class="timeline-period">{item.period}</p>
+            <div>
+              <h3>{item.role}</h3>
+              <p class="timeline-company">{item.company}</p>
+              <p>{item.summary}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="capabilities">
+    <div class="shell">
+      <div class="section-heading split-heading">
+        <div>
+          <p class="eyebrow">Capabilities</p>
+          <h2>Full-stack breadth, backend depth.</h2>
+        </div>
+        <p>I choose tools for the product and team—not for the logo wall.</p>
+      </div>
+
+      <div class="capability-grid">
+        {capabilityGroups.map((group, index) => (
+          <article class="capability-card">
+            <span class="card-number">0{index + 1}</span>
+            <h3>{group.label}</h3>
+            <p>{group.summary}</p>
+            <ul class="skill-list">
+              {group.skills.map((skill) => <li>{skill}</li>)}
+            </ul>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-principles section-dark" aria-labelledby="principles-title">
+    <div class="shell">
+      <div class="section-heading split-heading">
+        <div>
+          <p class="eyebrow">How I work</p>
+          <h2 id="principles-title">Good engineering continues after the code compiles.</h2>
+        </div>
+        <p>
+          I balance delivery speed with security, maintainability, clear communication, and the responsibility to
+          support what reaches production.
+        </p>
+      </div>
+      <div class="principle-grid">
+        {workingPrinciples.map((principle, index) => (
+          <article class="principle-card">
+            <span>0{index + 1}</span>
+            <h3>{principle.label}</h3>
+            <p>{principle.summary}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-about" id="about">
+    <div class="shell about-grid">
+      <div class="about-statement">
+        <p class="eyebrow">About</p>
+        <h2>Clear communication is part of good engineering.</h2>
+      </div>
+      <div class="about-copy">
+        <p class="large-copy">
+          I work across code, product requirements, client conversations, deployment, and ongoing support—turning
+          complex needs into software that is understandable and maintainable.
+        </p>
+        <p>
+          I’ve collaborated with Philippine, Japanese, and US teams in both in-house and freelance roles. My experience
+          spans digital banking, commerce, content platforms, community products, mobile applications, payment integrations,
+          and cloud operations.
+        </p>
+        <div class="about-details">
+          <div><span>Education</span><strong>BS Information Technology<br />Bulacan State University</strong></div>
+          <div><span>Languages</span><strong>English · Filipino</strong></div>
+          <div><span>Work setup</span><strong>Remote · Hybrid · On-site</strong></div>
+          <div><span>Availability</span><strong>Full-time · Freelance</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-leadership" id="leadership">
+    <div class="shell leadership-layout">
+      <div class="leadership-heading">
+        <p class="eyebrow">Leadership beyond code</p>
+        <h2>Technology, communication, and service belong together.</h2>
+        <p>
+          The same habits that strengthen an engineering team—clarity, accountability, mentoring, and calm execution—also
+          shape how I serve my local community.
+        </p>
+      </div>
+      <article class="leadership-card">
+        <div class="leadership-meta">
+          <span>{communityLeadership.period}</span>
+          <span>Community service</span>
+        </div>
+        <h3>{communityLeadership.role}</h3>
+        <p class="leadership-organization">{communityLeadership.organization}</p>
+        <p class="leadership-summary">{communityLeadership.summary}</p>
+        <ul>
+          {communityLeadership.strengths.map((strength) => <li>{strength}</li>)}
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section-archive" aria-labelledby="archive-title">
+    <div class="shell">
+      <div class="section-heading split-heading">
+        <div>
+          <p class="eyebrow">Project archive</p>
+          <h2 id="archive-title">More shipped work.</h2>
+        </div>
+        <p>Additional web, mobile, content, and commerce projects from across my career.</p>
+      </div>
+
+      <div class="archive-list">
+        {projects.map((project, index) => (
+          <a class="archive-row" href={`/work/${project.slug}/`}>
+            <span class="archive-number">{String(index + 1).padStart(2, '0')}</span>
+            <strong>{project.title}</strong>
+            <span>{project.category}</span>
+            <span>{project.role}</span>
+            <span class="archive-arrow" aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section section-dark" id="contact">
+    <div class="shell contact-inner">
+      <p class="eyebrow">Have a project or role in mind?</p>
+      <h2>Let’s build something dependable.</h2>
+      <p>
+        I’m available for full-time opportunities and selected freelance projects involving web platforms, APIs,
+        mobile applications, or cloud deployment.
+      </p>
+      <a class="contact-email" href="mailto:dunhilldimaapi@gmail.com">dunhilldimaapi@gmail.com <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+</BaseLayout>

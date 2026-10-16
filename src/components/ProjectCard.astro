@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+import type { Project } from '../data/portfolio';
+
+type Props = {
+  project: Project;
+  featured?: boolean;
+  index?: number;
+};
+
+const { project, featured = false, index = 0 } = Astro.props;
+---
+
+<article class:list={['project-card', { 'project-card-featured': featured }]}> 
+  <a class="project-media" href={`/work/${project.slug}/`} aria-label={`Read the ${project.title} case study`}>
+    <Image
+      src={project.cover}
+      alt={`${project.title} product interface`}
+      widths={[480, 720, 960]}
+      sizes={featured ? '(min-width: 900px) 50vw, 100vw' : '(min-width: 900px) 33vw, 100vw'}
+      format="webp"
+      loading="lazy"
+    />
+    <span class="project-index" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+  </a>
+  <div class="project-card-body">
+    <div class="project-meta">
+      <span>{project.category}</span>
+      <span>{project.role}</span>
+    </div>
+    <h3><a href={`/work/${project.slug}/`}>{project.title}</a></h3>
+    <p>{project.summary}</p>
+    <ul class="tag-list" aria-label="Technologies used">
+      {project.technologies.slice(0, 4).map((technology) => <li>{technology}</li>)}
+    </ul>
+    <a class="text-link" href={`/work/${project.slug}/`}>View case study <span aria-hidden="true">↗</span></a>
+  </div>
+</article>
