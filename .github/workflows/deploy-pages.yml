@@ -15,25 +15,29 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+  prepare:
     runs-on: ubuntu-latest
     steps:
       - name: Check out the portfolio
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v6
-        with:
-          node-version: 24
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build the static site
-        run: npm run build
-        env:
-          ASTRO_TELEMETRY_DISABLED: 1
+      - name: Prepare the plain HTML site
+        run: |
+          mkdir -p _site/src/styles
+          mkdir -p _site/assets/img/portfolio/OA
+          mkdir -p _site/assets/img/portfolio/DCSC
+          mkdir -p _site/assets/img/portfolio/Creativeinterlace
+          mkdir -p _site/assets/img/portfolio/WebFocus
+          cp index.html _site/index.html
+          cp src/styles/global.css _site/src/styles/global.css
+          cp assets/img/favicon.png _site/assets/img/favicon.png
+          cp assets/img/profile-img.jpg _site/assets/img/profile-img.jpg
+          cp assets/img/portfolio/OA/1.jpg _site/assets/img/portfolio/OA/1.jpg
+          cp assets/img/portfolio/DCSC/1.jpg _site/assets/img/portfolio/DCSC/1.jpg
+          cp assets/img/portfolio/Creativeinterlace/2.jpg _site/assets/img/portfolio/Creativeinterlace/2.jpg
+          cp assets/img/portfolio/WebFocus/3.jpg _site/assets/img/portfolio/WebFocus/3.jpg
+          cp public/og.png _site/og.png
+          touch _site/.nojekyll
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
@@ -41,14 +45,14 @@ jobs:
       - name: Upload the site
         uses: actions/upload-pages-artifact@v4
         with:
-          path: dist
+          path: _site
 
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: prepare
     steps:
       - name: Publish the site
         id: deployment
