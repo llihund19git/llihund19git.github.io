@@ -377,6 +377,7 @@ h3 {
   color: var(--accent);
   font-family: Georgia, 'Times New Roman', serif;
   font-weight: 400;
+  white-space: nowrap;
 }
 
 .status-dot {
@@ -1541,7 +1542,276 @@ h3 {
   color: var(--muted-dark);
 }
 
+/* Evidence-led portfolio additions */
+picture {
+  display: block;
+}
+
+.portrait-frame picture,
+.project-media picture {
+  width: 100%;
+  height: 100%;
+}
+
+.featured-grid {
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.project-card-featured:nth-child(even) {
+  transform: none;
+}
+
+.project-card-body {
+  display: flex;
+  height: calc(100% - min(27vw, 24rem));
+  min-height: 24rem;
+  flex-direction: column;
+}
+
+.project-card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.project-card-actions > a:not(.text-link) {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.project-card-actions > a:hover {
+  color: var(--ink);
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.contact-actions a {
+  border-bottom: 1px solid var(--line-dark);
+  color: var(--muted-dark);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.contact-actions a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.case-note {
+  margin-top: 2rem;
+  padding: 1.4rem 1.5rem;
+  border-left: 0.3rem solid var(--blue);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: rgba(108, 168, 255, 0.1);
+}
+
+.case-note strong {
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.case-note p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.architecture-flow {
+  display: grid;
+  align-items: center;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.15fr) auto minmax(0, 1fr) auto minmax(0, 1.2fr);
+}
+
+.architecture-stack {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.architecture-node {
+  display: grid;
+  min-height: 8.5rem;
+  align-content: center;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: 0 12px 34px rgba(13, 27, 42, 0.06);
+}
+
+.architecture-node-accent {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--white);
+}
+
+.architecture-node span {
+  margin-bottom: 0.5rem;
+  color: #476a8e;
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.architecture-node-accent span {
+  color: var(--accent);
+}
+
+.architecture-node strong {
+  font-size: 1.05rem;
+}
+
+.architecture-node small {
+  margin-top: 0.45rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.architecture-node-accent small {
+  color: var(--muted-dark);
+}
+
+.architecture-arrow {
+  color: #54708b;
+  font-family: var(--mono);
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+.numbered-evidence {
+  margin: 2rem 0 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+}
+
+.numbered-evidence li {
+  display: grid;
+  gap: 1.2rem;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid var(--line);
+  grid-template-columns: 2.5rem 1fr;
+}
+
+.numbered-evidence li > span {
+  color: #54708b;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.numbered-evidence strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 1.1rem;
+}
+
+.numbered-evidence p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.decision-grid {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line-dark);
+  border-left: 1px solid var(--line-dark);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.decision-grid article {
+  min-height: 25rem;
+  padding: clamp(1.7rem, 3vw, 3rem);
+  border-right: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-dark);
+}
+
+.decision-grid h2 {
+  max-width: 10ch;
+  margin: 3rem 0 1.25rem;
+  font-size: clamp(2rem, 3.5vw, 3.6rem);
+}
+
+.decision-grid article > p:last-child {
+  color: var(--muted-dark);
+}
+
+.case-cover picture,
+.case-cover img {
+  width: 100%;
+}
+
+.case-cover-mobile img {
+  max-height: 42rem;
+  object-fit: contain;
+  background: #fff;
+}
+
+.next-case {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.next-case a {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-block: 1px solid var(--line);
+}
+
+.next-case span {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.next-case strong {
+  font-size: clamp(1.5rem, 3vw, 2.8rem);
+}
+
+.case-mobile-back {
+  display: none;
+}
+
 @media (max-width: 1050px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .project-card-body {
+    height: auto;
+  }
+
+  .architecture-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .architecture-arrow {
+    transform: rotate(90deg);
+    justify-self: center;
+  }
+
   .hero-grid {
     grid-template-columns: 1fr 0.62fr;
   }
@@ -1593,6 +1863,15 @@ h3 {
 
   .mobile-menu {
     display: block;
+  }
+
+  .case-mobile-back {
+    display: inline-flex;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--line-dark);
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 800;
   }
 
   .hero-grid {
@@ -1652,6 +1931,14 @@ h3 {
 
   .leadership-impact {
     grid-template-columns: 1fr;
+  }
+
+  .decision-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .decision-grid article {
+    min-height: auto;
   }
 
   .leadership-impact article {
@@ -1787,6 +2074,13 @@ h3 {
     font-size: 0.92rem;
   }
 
+  .contact-actions,
+  .project-card-actions,
+  .next-case a {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
   .footer-inner {
     align-items: start;
     grid-template-columns: 1fr;
@@ -1856,4 +2150,9 @@ h3 {
   .resume-role-list { gap: 0.2rem; margin-top: 0.45rem; }
   .resume-skill-grid { gap: 1rem; }
   a { text-decoration: none; }
+  .case-hero { padding: 0 0 2rem; background: #fff; color: #000; }
+  .case-cover { margin: 0; border: 0; box-shadow: none; }
+  .architecture-node { box-shadow: none; }
+  .next-case,
+  .contact-section { display: none; }
 }

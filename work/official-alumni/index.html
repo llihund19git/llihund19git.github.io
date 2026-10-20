@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0d1b2a">
+    <meta name="description" content="Official Alumni case study: Laravel APIs, MySQL data models, AWS delivery, testing, and multilingual search performance work by Dunhill Dimaapi.">
+    <link rel="canonical" href="https://llihund19git.github.io/work/official-alumni/">
+    <link rel="icon" type="image/png" href="../../assets/img/favicon.png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Official Alumni Case Study — Dunhill Dimaapi">
+    <meta property="og:description" content="Backend delivery and multilingual search-performance work for a continuously developed Laravel platform.">
+    <meta property="og:image" content="https://llihund19git.github.io/og.png">
+    <title>Official Alumni Case Study — Dunhill Dimaapi</title>
+    <link rel="stylesheet" href="../../src/styles/global.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#case-content">Skip to case study</a>
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="../../" aria-label="Dunhill Dimaapi, portfolio home"><span class="brand-mark" aria-hidden="true">DD</span><span class="brand-copy"><strong>Dunhill Dimaapi</strong><small>Senior Backend &amp; Full-Stack Developer</small></span></a>
+        <nav class="desktop-nav" aria-label="Case study navigation"><a href="../../#work">Case studies</a><a href="../../#experience">Experience</a><a class="nav-cta" href="../../#contact">Contact</a></nav><a class="case-mobile-back" href="../../#work">All work</a>
+      </div>
+    </header>
+
+    <main id="case-content">
+      <section class="case-hero section-dark">
+        <div class="shell">
+          <a class="back-link" href="../../#work">← Back to selected work</a>
+          <div class="case-title-grid">
+            <div><p class="eyebrow">Case study 01 · Production business system</p><h1>Official Alumni</h1></div>
+            <p>Backend feature delivery, AWS-supported releases, and a multilingual search investigation for an existing Laravel platform under continuous development.</p>
+          </div>
+          <dl class="case-facts">
+            <div><dt>Role</dt><dd>Back-End Developer</dd></div>
+            <div><dt>Employer</dt><dd>Hackazouk, Inc. (PH)</dd></div>
+            <div><dt>Period</dt><dd>Dec 2023–Dec 2025</dd></div>
+            <div><dt>Team</dt><dd>7 developers</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <div class="shell case-cover">
+        <picture><source srcset="../../assets/img/portfolio/OA/1.webp" type="image/webp"><img src="../../assets/img/portfolio/OA/1.jpg" alt="Official Alumni interface shown on a laptop" width="1400" height="1400"></picture>
+      </div>
+
+      <section class="section">
+        <div class="shell case-content-grid">
+          <div><p class="eyebrow">Context and responsibility</p><h2>Strengthening an existing platform.</h2></div>
+          <div class="case-prose">
+            <p class="large-copy">The platform already existed when I joined. My work focused on continuous backend development: APIs, database models, notifications, staging and production deployments, and features such as scheduled chat messages and stickers.</p>
+            <p>I worked within a seven-developer team: three backend developers, including one senior developer, two web frontend developers, and two mobile developers. Across the engagement, I delivered approximately ten general product features, plus refactoring, defect resolution, and unit-testing work.</p>
+            <div class="case-note"><strong>Confidentiality boundary</strong><p>The detailed business model, private client companies, and primary-user information are intentionally omitted. This case study uses only approved public-safe technical details.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tint">
+        <div class="shell">
+          <div class="section-heading split-heading"><div><p class="eyebrow">Architecture</p><h2>A public-safe view of the delivery path.</h2></div><p>The diagram shows only confirmed components and does not expose private infrastructure or client data.</p></div>
+          <div class="architecture-flow" role="img" aria-label="Web and mobile clients connect to Laravel REST APIs backed by MySQL, notifications, and AWS delivery services">
+            <div class="architecture-node"><span>Clients</span><strong>Web + mobile</strong></div><span class="architecture-arrow" aria-hidden="true">→</span>
+            <div class="architecture-node architecture-node-accent"><span>Application</span><strong>Laravel REST APIs</strong></div><span class="architecture-arrow" aria-hidden="true">→</span>
+            <div class="architecture-stack"><div class="architecture-node"><span>Data</span><strong>MySQL</strong></div><div class="architecture-node"><span>Capability</span><strong>Notifications</strong></div></div><span class="architecture-arrow" aria-hidden="true">→</span>
+            <div class="architecture-node"><span>Delivery</span><strong>AWS services</strong><small>EC2 · RDS · S3 · CodePipeline · Elastic Beanstalk</small></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="shell case-content-grid">
+          <div><p class="eyebrow">Key engineering problem</p><h2>Multilingual search without unacceptable latency.</h2></div>
+          <div class="case-prose">
+            <p class="large-copy">Search needed to handle alphabetic A–Z, Hiragana, Katakana, and Kanji content while keeping database-query performance practical.</p>
+            <ol class="numbered-evidence">
+              <li><span>01</span><div><strong>Compared approaches</strong><p>Evaluated and tested MySQL full-text search and AWS Elasticsearch, recording results rather than choosing by preference alone.</p></div></li>
+              <li><span>02</span><div><strong>Iterated over several months</strong><p>Repeated testing was used to balance useful matching with query latency across different characters and terms.</p></div></li>
+              <li><span>03</span><div><strong>Selected MySQL full-text search</strong><p>The production implementation used MySQL full-text search. Some very common characters or words were excluded because including them made searches excessively slow.</p></div></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark">
+        <div class="shell decision-grid">
+          <article><p class="eyebrow">Quality and security</p><h2>Release with verification.</h2><p>Work included validation, authentication and authorization, secure database queries, sensitive-data handling, caching, and query optimization. Verification used PHPUnit, Postman, QA/UAT, and code review.</p></article>
+          <article><p class="eyebrow">Operations</p><h2>Support the delivery path.</h2><p>I used the existing CI/CD pipeline for staging and production releases, checked CloudWatch logs during investigations, and monitored whether automated updates completed successfully. I do not claim ownership of the original pipeline setup.</p></article>
+          <article><p class="eyebrow">Reflection</p><h2>Design for performance earlier.</h2><p>The search work changed how I approach new features: I now consider likely database-query impact during design and implementation instead of waiting for a slowdown to appear.</p></article>
+        </div>
+      </section>
+
+      <nav class="next-case shell" aria-label="Case study navigation"><a href="../roadr/"><span>Next case study</span><strong>Roadr →</strong></a></nav>
+    </main>
+    <footer class="site-footer"><div class="shell footer-inner"><div><strong>Dunhill Dimaapi</strong><p>Senior Backend &amp; Full-Stack Developer</p></div><div class="footer-links"><a href="mailto:dunhilldimaapi@gmail.com">Email</a><a href="https://www.linkedin.com/in/llihund19/" target="_blank" rel="noreferrer">LinkedIn</a></div><p class="copyright">© <span data-year>2026</span> Dunhill Dimaapi</p></div></footer>
+    <script>document.querySelector('[data-year]').textContent = new Date().getFullYear();</script>
+  </body>
+</html>

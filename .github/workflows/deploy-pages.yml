@@ -27,16 +27,24 @@ jobs:
           mkdir -p _site/assets/img/portfolio/OA
           mkdir -p _site/assets/img/portfolio/DCSC
           mkdir -p _site/assets/img/portfolio/Creativeinterlace
-          mkdir -p _site/assets/img/portfolio/WebFocus
+          mkdir -p _site/work
           cp index.html _site/index.html
+          cp 404.html _site/404.html
+          cp sitemap.xml _site/sitemap.xml
           cp src/styles/global.css _site/src/styles/global.css
+          cp -R work/. _site/work/
           cp assets/img/favicon.png _site/assets/img/favicon.png
           cp assets/img/profile-img.jpg _site/assets/img/profile-img.jpg
+          cp assets/img/profile-img.webp _site/assets/img/profile-img.webp
           cp assets/img/portfolio/OA/1.jpg _site/assets/img/portfolio/OA/1.jpg
-          cp assets/img/portfolio/DCSC/1.jpg _site/assets/img/portfolio/DCSC/1.jpg
+          cp assets/img/portfolio/OA/1.webp _site/assets/img/portfolio/OA/1.webp
+          cp assets/img/portfolio/DCSC/2.jpg _site/assets/img/portfolio/DCSC/2.jpg
+          cp assets/img/portfolio/DCSC/2.webp _site/assets/img/portfolio/DCSC/2.webp
           cp assets/img/portfolio/Creativeinterlace/2.jpg _site/assets/img/portfolio/Creativeinterlace/2.jpg
-          cp assets/img/portfolio/WebFocus/3.jpg _site/assets/img/portfolio/WebFocus/3.jpg
+          cp assets/img/portfolio/Creativeinterlace/2.webp _site/assets/img/portfolio/Creativeinterlace/2.webp
           cp public/og.png _site/og.png
+          cp public/robots.txt _site/robots.txt
+          cp Dunhill_Dimaapi_Senior_Backend_Developer_CV.pdf _site/Dunhill_Dimaapi_Senior_Backend_Developer_CV.pdf
           touch _site/.nojekyll
 
       - name: Configure GitHub Pages
