@@ -20,7 +20,9 @@ Then open `http://127.0.0.1:4321/`.
 - `work/dcsc-malolos/index.html` — DCSC Malolos case study
 - `src/styles/global.css` — shared design system and responsive styles
 - `sitemap.xml`, `public/robots.txt`, and `404.html` — discoverability and graceful error handling
-- `output/pdf/Dunhill_Dimaapi_Senior_Backend_Developer_CV.pdf` — source CV copied to the published root during deployment
+- `Dunhill_Dimaapi_Senior_Backend_Developer_CV.pdf` — public-safe portfolio CV without a mobile number
+- `output/pdf/Dunhill_Dimaapi_Senior_Backend_Developer_CV.pdf` — private application CV retained locally with full contact details
+- `scripts/build-public-cv.py` — regenerates the public-safe CV and updates the published root asset
 
 ## Content source of truth
 
